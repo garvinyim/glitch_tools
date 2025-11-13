@@ -218,12 +218,14 @@ def read_ATNF_pulsar_catalogue(show_table = False):
 
 ### MAIN ###
 
-# read_JBCA_glitch_catalogue(show_table = True)
+if __name__ == "__main__": # This ensures the below code only runs when used as a script and not as a module (being used in another program)
 
-# ## Download the ATNF files if they are not in the current working directory
-# if not os.path.exists('psrcat_pkg.tar.gz'):
-#     download_ATNF_catalogues()
+    read_JBCA_glitch_catalogue(show_table = True)
     
-# read_ATNF_glitch_catalogue(show_table = True)
-
-# read_ATNF_pulsar_catalogue(show_table = True)
+    ## Download the ATNF files if they are not in the current working directory
+    if not os.path.exists('psrcat_pkg.tar.gz'):
+        download_ATNF_catalogues()
+        
+    read_ATNF_glitch_catalogue(show_table = True)
+    
+    read_ATNF_pulsar_catalogue(show_table = True)
